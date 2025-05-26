@@ -7,7 +7,7 @@ const CartaoCreditoVideo = () => {
     useEffect(() => {
         const initializeCardForm = async () => {
             await loadMercadoPago();
-            const mp = new window.MercadoPago('TEST-92802cfc-b4b3-490a-a8df-d59d00e795da');
+            const mp = new window.MercadoPago('YOUR-API-KEY');
 
             const cardForm = mp.cardForm({
                 amount: '10.9',
@@ -133,22 +133,19 @@ const CartaoCreditoVideo = () => {
                 </span>
                 <div id="form-checkout__cardNumber" className="container"></div>
                 <span>
-                    11/25
+                    11/30
                 </span>
                 <div id="form-checkout__expirationDate" className="container"></div>
                 <span>
                     123
                 </span>
                 <div id="form-checkout__securityCode" className="container"></div>
-                <input type="text" id="form-checkout__cardholderName" placeholder="Titular do cartão" />
+                <input type="text" id="form-checkout__cardholderName" placeholder="Titular do cartão" value="APRO" />
                 <select id="form-checkout__issuer"></select>
                 <select id="form-checkout__installments"></select>
                 <select id="form-checkout__identificationType"></select>
-                <span>
-                    12345678909
-                </span>
-                <input type="text" id="form-checkout__identificationNumber" placeholder="Número do documento" />
-                <input type="email" id="form-checkout__cardholderEmail" placeholder="E-mail" value="gerson@gmail.com" />
+                <input type="text" id="form-checkout__identificationNumber" placeholder="Número do documento" value="12345678909" />
+                <input type="email" id="form-checkout__cardholderEmail" placeholder="E-mail" value="lrochadev@gmail.com" />
                 <button type="submit" id="form-checkout__submit">Pagar</button>
                 <progress value="0" className="progress-bar">Carregando...</progress>
             </form>
