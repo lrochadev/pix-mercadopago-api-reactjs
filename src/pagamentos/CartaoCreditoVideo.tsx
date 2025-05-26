@@ -10,7 +10,7 @@ const CartaoCreditoVideo = () => {
             const mp = new window.MercadoPago('TEST-92802cfc-b4b3-490a-a8df-d59d00e795da');
 
             const cardForm = mp.cardForm({
-                amount: '1270.9',
+                amount: '10.9',
                 iframe: true,
                 form: {
                     id: 'form-checkout',
