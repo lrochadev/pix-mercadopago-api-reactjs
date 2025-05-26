@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const BASE_PATH = "http://localhost:3000";
+const BASE_PATH = "http://localhost:8080";
 
 export async function postCriarPix(body: any) {
-    return await axios.post(`${BASE_PATH}/criar-pix`,
+    return await axios.post(`${BASE_PATH}/api/payments`,
         { body }
     )
 }
@@ -18,23 +18,23 @@ export async function postCredit(
     identificationType: string,
     identificationNumber: string
 ) {
-    const body = {
+    return await axios.post(`${BASE_PATH}/api/payments`,
+        {
         token,
         issuer_id,
         payment_method_id,
         transaction_amount: transaction_amount,
         installments: Number(installments),
         description: "Capa para notebook",
-        payer: {
-            email,
-            identification: {
-                type: identificationType,
-                number: identificationNumber,
-            },
+        contribuicao: {
+            user: {
+                email,
+                identification: {
+                    type: identificationType,
+                    number: identificationNumber,
+                },
+            }
         },
     }
-
-    return await axios.post(`${BASE_PATH}/process_payment`,
-        { body }
     );
 }
