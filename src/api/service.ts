@@ -27,6 +27,9 @@ export async function postCredit(
         installments: Number(installments),
         description: "Capa para notebook",
         contribuicao: {
+            campaign: {
+                id: 253
+            },
             user: {
                 email,
                 identification: {
